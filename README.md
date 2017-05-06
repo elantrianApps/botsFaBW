@@ -1,6 +1,11 @@
 # bots for a better world 
 ## Social media tools to make staying connected to followers affordable for non-profits (and other good causes)
 
+### [www.botsforabetterworld.com](http://www.botsforabetterworld.com)
+
+* For help with your project, submit an [issue](https://github.com/elantrian/botsFaBW/issues)
+
+* Email: elantrian@botsforabetterworld.com
 
 
 <pre>
