@@ -1,24 +1,18 @@
 # -*- coding: utf-8 -*-
 #!/usr/bin/python
 
-import argparse
-from botTools import *
-
-
-
 """
-
 Usage:
 Call at command line as follows:
-1.a) With a file full of ** user IDs ** (one per line, no commas/etc) to be messaged:
-- python MessageBot.py <myMessage.txt> <followersToMessage.txt>
-1.a) With a file full of ** Screen Names ** (one per line, no commas/etc) to be messaged:
-- python MessageBot.py -SN <myMessage.txt> <followersToMessage.txt>
-1.b) Collecting followers of a particular user and messaging all of them:
-- python MessageBot.py <myMessage.txt>
-2) Follow user prompts to enter API credentials
+python MessageBot.py [options] [message file]
 
-Requires:
+Options:
+- --file
+allows for a list of user IDs in a text file (default: all followers), 1 per line
+- --SN
+allows for a file containing screen names (@ Twitter handles) instead of ID #s
+
+Dependencies:
 - botTools module (expects botTools.py in the same directory)
 - python2.7.x
 - python-twitter library
@@ -29,10 +23,45 @@ Requires:
     for more info and a tutorial
 
 Features:
+- Staggered API calls avoid being flagged as spam or hitting rate limit
+    - Twitter limits DM's to 1000/day and 15/15 min. MessageBot will prevent you
+    from exceeding your 15 min limit, and will simply pause and wait when you
+    hit your daily limit. Note that messaging hundreds or thousands of followers
+    will take hours to days. This isn't a limitation of MessageBot, It's a feature
+    of Twitter that makes messaging bearable!
+    - DMs are meant for humans, so we try to make your messages less robotic.
+    That's why we stagger the calls by a random number of seconds, and generally
+    slow them down. If you disable this feature, you will almost certainly be
+    flagged as spam within seconds. (you have been warned)
+- You choose a list of followers (specified 1 per line in a text file), or all of
+the followers for the authenticated user
+- You can choose to use twitter handles/screen names instead of the unique
+numerical Twitter ID
 
+Author:
+Copyright 2017 Elizabeth Lagesse <github.com/elantrian> <www.elizabethlagesse.com>
 
-Author: github.com/elantrian
+This file is part of botsForABetterWorld.
+
+    botsForABetterWorld is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    botsForABetterWorld is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with botsForABetterWorld.  If not, see <http://www.gnu.org/licenses/>.
 """
+
+
+import argparse
+from botTools import *
+
+
 parser = argparse.ArgumentParser(description='A Twitter bot for sending \
                                 messages to your followers. ')
 parser.add_argument('messageText', help='Required: File with your message text')
