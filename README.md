@@ -1,10 +1,10 @@
-# MessageBot
-'''
-             _             _        _                    
-         ___| | __ _ _ __ | |_ _ __(_) __ _ _ __         
-        / _ \ |/ _` | '_ \| __| '__| |/ _` | '_ \        
-       |  __/ | (_| | | | | |_| |  | | (_| | | | |       
-        \___|_|\__,_|_| |_|\__|_|  |_|\__,_|_| |_|       
+# bots for a better world 
+## Social media tools to make staying connected to followers affordable for non-profits (and other good causes)
+
+
+
+<pre>
+
 
 
  MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
@@ -62,5 +62,7 @@ M          MMMMMM                       MMMMMMM         M
       __      _____  _ __| | __| |                       
       \ \ /\ / / _ \| '__| |/ _` |                       
        \ V  V / (_) | |  | | (_| |                       
-        \_/\_/ \___/|_|  |_|\__,_|                       
-'''
+        \_/\_/ \___/|_|  |_|\__,_| 
+        
+       
+</pre>
