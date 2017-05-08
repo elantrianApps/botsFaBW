@@ -8,7 +8,7 @@
     
     <title>botsForABetterWorld Documentation &#8212; botsFaBW 1.0 documentation</title>
     
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
@@ -26,16 +26,18 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-   
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
-
+    <link rel="search" title="Search" href="search.html" /> 
   </head>
   <body role="document">
-  
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="#">botsFaBW 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
 
     <div class="document">
       <div class="documentwrapper">
@@ -44,8 +46,10 @@
             
   <div class="section" id="botsforabetterworld-documentation">
 <h1>botsForABetterWorld Documentation<a class="headerlink" href="#botsforabetterworld-documentation" title="Permalink to this headline">¶</a></h1>
-<p><strong>This project (and these doc pages) is an active work in progress!</strong></p>
-<p>www.botsForABetterWorld.com</p>
+<p><strong>This project is an active work in progress!</strong> (as is this documentation)</p>
+<a class="reference external image-reference" href="https://gitter.im/botsFaBW/SupportQuestions"><img alt="Support Chat" src="https://badges.gitter.im/Join%20Chat.svg" /></a>
+<a class="reference external image-reference" href="https://codeclimate.com/github/codeclimate/codeclimate"><img alt="Code Climate" src="https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg" /></a>
+<p><a class="reference external" href="http://www.botsforabetterworld.com">www.botsForABetterWorld.com</a></p>
 <div class="section" id="features">
 <h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="messagebot">
@@ -53,7 +57,7 @@
 <p>Sends Twitter Direct Messages to specified (or all) followers of an authenticated
 user</p>
 <ul class="simple">
-<li>Staggered API calls avoid being flagged as spam or hitting rate limit<ul>
+<li>Staggered API requests avoid being flagged as spam or hitting rate limit<ul>
 <li>Twitter limits DM&#8217;s to 1000/day and 15/15 min. MessageBot will prevent you
 from exceeding your 15 min limit, and will simply pause and wait when you
 hit your daily limit. Note that messaging hundreds or thousands of followers
@@ -74,13 +78,34 @@ numerical Twitter ID</li>
 </div>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
-<p>(coming soon)</p>
+<p>(section under construction)</p>
+<p>Dependencies:</p>
+<ul class="simple">
+<li>python2.7.x</li>
+<li><a class="reference external" href="https://python-twitter.readthedocs.io/en/latest/installation.html">python-twitter library</a></li>
+</ul>
+<p>You will need a Twitter &#8220;app&#8221; attached to your Twitter account, with which you
+can create API access keys</p>
+<ul class="simple">
+<li>This can be done at <a class="reference external" href="https://apps.twitter.com/">apps.twitter.com</a></li>
+<li>See <a class="reference external" href="https://python-twitter.readthedocs.io/en/latest/getting_started.html">this tutorial</a>
+for more info</li>
+</ul>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>(section under construction)</p>
+<img alt="_images/useExample.png" src="_images/useExample.png" />
 </div>
 <div class="section" id="support">
 <h2>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Issue Tracker: <a class="reference external" href="https://github.com/elantrian/botsFaBW/issues">https://github.com/elantrian/botsFaBW/issues</a></li>
+<li><a class="reference external" href="https://github.com/elantrian/botsFaBW/issues">GitHub Issue Tracker</a></li>
+<li><a class="reference external" href="https://gitter.im/botsFaBW/SupportQuestions">Gitter Support Chat</a></li>
+<li>Email: <a class="reference external" href="mailto:elantrian&#37;&#52;&#48;botsforabetterworld&#46;com">elantrian<span>&#64;</span>botsforabetterworld<span>&#46;</span>com</a></li>
 </ul>
+<p>Use -h at the command line for basic usage and option information:</p>
+<img alt="_images/helpText.png" src="_images/helpText.png" />
 </div>
 <div class="section" id="license">
 <h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
@@ -119,25 +144,22 @@ along with botsForABetterWorld.  If not, see <a class="reference external" href=
 </ul>
 </li>
 <li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#usage">Usage</a></li>
 <li><a class="reference internal" href="#support">Support</a></li>
 <li><a class="reference internal" href="#license">License</a></li>
 </ul>
 </li>
 </ul>
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="#">Documentation overview</a><ul>
-  </ul></li>
-</ul>
-</div>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/index.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/index.rst.txt"
+           rel="nofollow">Show Source</a></li>
+    <li><a href="https://github.com/elantrian/botsFaBW/blob/master/index.rst"
+           rel="nofollow">Show on GitHub</a></li>
+    <li><a href="https://github.com/elantrian/botsFaBW/edit/master/index.rst"
+           rel="nofollow">Edit on GitHub</a></li>
+  </ul>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -152,20 +174,18 @@ along with botsForABetterWorld.  If not, see <a class="reference external" href=
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="footer">
-      &copy;2017, Elantrian.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.5</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
-      
-      |
-      <a href="_sources/index.rst.txt"
-          rel="nofollow">Page source</a>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="#">botsFaBW 1.0 documentation</a> &#187;</li> 
+      </ul>
     </div>
-
-    
-
-    
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Elantrian.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.5.
+    </div>
   </body>
 </html>
