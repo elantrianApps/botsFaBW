@@ -1,6 +1,9 @@
 
-[![Documentation Status](https://readthedocs.org/projects/botsforabetterworld/badge/?version=latest)](http://botsforabetterworld.readthedocs.io/en/latest/?badge=latest)
+# bots for a better world
 
+[![Documentation Status](https://readthedocs.org/projects/botsforabetterworld/badge/?version=latest)](http://botsforabetterworld.readthedocs.io/en/latest/?badge=latest)
+[![Code Climate](https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/codeclimate/codeclimate)
+[![Join the chat at https://gitter.im/elantrian/botsFaBW](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/dwyl/?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 * View [Documentation](https://botsforabetterworld.readthedocs.io/en/latest/)
 
 * For help with your project, submit an [issue](https://github.com/elantrian/botsFaBW/issues)
@@ -67,7 +70,7 @@ M          MMMMMM                       MMMMMMM         M
       __      _____  _ __| | __| |                       
       \ \ /\ / / _ \| '__| |/ _` |                       
        \ V  V / (_) | |  | | (_| |                       
-        \_/\_/ \___/|_|  |_|\__,_| 
-        
-       
+        \_/\_/ \___/|_|  |_|\__,_|
+
+
 </pre>

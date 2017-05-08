@@ -1,0 +1,3 @@
+## paths excluded from codeclimate
+exclude_paths:
+- "docs/**"
