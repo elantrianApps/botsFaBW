@@ -8,6 +8,9 @@ botsForABetterWorld Documentation
 #################################
 \ **This project is an active work in progress!**\  (as is this documentation)
 
+.. image:: https://img.shields.io/badge/license-GPL-blue.svg
+   :target: https://en.wikipedia.org/wiki/GNU_General_Public_License
+   :alt: License Info - GNU GPL 3
 
 .. image:: https://badges.gitter.im/Join%20Chat.svg
    :target: https://gitter.im/botsFaBW/SupportQuestions
