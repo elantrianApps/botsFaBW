@@ -1,3 +1,9 @@
 ## paths excluded from codeclimate
 exclude_paths:
 - "docs/**"
+
+engines:
+  radon:
+    enabled: true
+    config:
+      python_version: 2
