@@ -36,10 +36,10 @@ This file is part of botsForABetterWorld.
 """
 
 import sys
-import twitter
 import time
 import random
 import argparse
+import twitter
 
 #initialize a (pseudo)random number generator for staggering API calls
 random.seed()
