@@ -72,5 +72,5 @@ along with botsForABetterWorld.  If not, see http://www.gnu.org/licenses/.
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Contents:
