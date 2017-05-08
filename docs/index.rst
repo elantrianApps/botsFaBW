@@ -13,10 +13,6 @@ botsForABetterWorld Documentation
    :target: https://gitter.im/botsFaBW/SupportQuestions
    :alt: Support Chat
 
-.. image:: https://codeclimate.com/github/elantrian/botsFaBW/badges/gpa.svg
-   :target: https://codeclimate.com/github/elantrian/botsFaBW
-   :alt: Code Climate
-
 `www.botsForABetterWorld.com <http://www.botsforabetterworld.com>`_
 
 
