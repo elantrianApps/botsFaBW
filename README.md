@@ -2,13 +2,15 @@
 # bots for a better world
 
 [![Documentation Status](https://readthedocs.org/projects/botsforabetterworld/badge/?version=latest)](http://botsforabetterworld.readthedocs.io/en/latest/?badge=latest)
-[![Code Climate](https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/codeclimate/codeclimate)
+[![Code Climate](https://codeclimate.com/github/elantrian/botsFaBW/badges/gpa.svg)](https://codeclimate.com/github/elantrian/botsFaBW)
 [![Join the chat at https://gitter.im/elantrian/botsFaBW](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/dwyl/?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 * View [Documentation](https://botsforabetterworld.readthedocs.io/en/latest/)
 
-* For help with your project, submit an [issue](https://github.com/elantrian/botsFaBW/issues)
-
-* Email: elantrian@botsforabetterworld.com
+* <b>For help with your project</b>
+  * submit an [issue](https://github.com/elantrian/botsFaBW/issues)
+  * email: elantrian@botsforabetterworld.com
+  * chat: [botsFaBW/SupportQuestions](https://gitter.im/botsFaBW/SupportQuestions?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 
 
 <pre>
