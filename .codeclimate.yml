@@ -5,5 +5,8 @@ exclude_paths:
 engines:
   radon:
     enabled: true
+    checks:
+      Complexity:
+        enabled: false
     config:
       python_version: 2
