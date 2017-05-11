@@ -12,10 +12,6 @@ botsForABetterWorld Documentation
    :target: https://en.wikipedia.org/wiki/GNU_General_Public_License
    :alt: License Info - GNU GPL 3
 
-.. image:: https://badges.gitter.im/Join%20Chat.svg
-   :target: https://gitter.im/botsFaBW/SupportQuestions
-   :alt: Support Chat
-
 `www.botsForABetterWorld.com <http://www.botsforabetterworld.com>`_
 
 
@@ -72,8 +68,7 @@ Usage
 
 Support
 =======
-- `GitHub Issue Tracker <https://github.com/elantrian/botsFaBW/issues>`_
-- `Gitter Support Chat <https://gitter.im/botsFaBW/SupportQuestions>`_
+- `GitHub Issue Tracker <https://github.com/elantrianApps/botsFaBW/issues>`_
 - Email: elantrian@botsforabetterworld.com
 
 Use -h at the command line for basic usage and option information:
