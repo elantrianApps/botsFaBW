@@ -37,17 +37,30 @@ This file is part of botsForABetterWorld.
 
 import sys
 import time
+from types import *
+import operator
 import random
 import argparse
+import fnmatch
 import twitter
+
 
 #initialize a (pseudo)random number generator for staggering API calls
 random.seed()
+
+def stdout_redirector(stream):
+    old_stdout = sys.stdout
+    sys.stdout = stream
+    try:
+        yield
+    finally:
+        sys.stdout = old_stdout
 
 
 class BotTools:
     def __init__(self,args):
         self.args = args
+        self.create = self.creator()
 
     def creator (self):
         """
@@ -106,7 +119,8 @@ class BotTools:
 
     def fetchFollowers (self):
         """
-        Collects list of followers to message.
+        Collects list of followers.
+
         Default (no file provided): All followers of the authenticated user
         Optional: Followers listed in a text file provided at the command line
         Returns: followersList (list of user IDs or screen names from specified source)
@@ -114,13 +128,12 @@ class BotTools:
         if self.args.file:
             # if a file is provided, use those followers
             followersList = self.fileToList()
-            print "Generated list of followers to message from file provided"
+            print "Generated list of followers from file provided "
         else:
             # if no file, gather all followers for authenticated user
             followersList = self.create.GetFollowerIDs()
-            print "Generated list of followers to message from Twitter "
+            print "Generated list of followers for the authenticated user "
         return followersList
-
 
     def fetchMessage (self):
         """
@@ -138,13 +151,12 @@ class BotTools:
             print "-----***-----"
             quit()
 
-
     def messageFollowers (self):
         """
         Messages all followers in the list returned by fetchFollowers, with the
         message text returned by fetchMessage.
         """
-        thisAPIInst = self.creator()
+        thisAPIInst = self.create
         followersList = self.fetchFollowers()
         messageToSend = self.fetchMessage()
         followerCount = 0
@@ -193,3 +205,113 @@ class BotTools:
         print "-------------"
         print messageToSend
         print "-------------"
+
+
+    def fetchFollowersPaged(self):
+        """
+        Collects a list of followers of a user/organization (by screen_name),
+        in pages of 5000
+
+        Requires a file name to be specified when script is called (as the 'file'
+        argument, ie: self.args.file)
+
+        """
+        thisAPIInst = self.create
+        try:
+            orgList = self.fileToList()
+        except:
+            print "-----***-----"
+            print "Error: Please include a text file containing the names of users and try again.\n"
+            print "(Use -h for more information)"
+            print "-----***-----"
+            quit()
+
+        #for each organization, page through followers 5,000 at a time
+        for org in orgList:
+            iterator = 1
+            nextCursor = -1
+            while nextCursor !=0: #keep going until there are no more results
+                print "Retrieving results page "+str(iterator)+" for "+str(org))
+                orgResults = thisAPIInst.GetFollowerIDsPaged(screen_name=org, cursor=nextCursor, count=5000)
+                #output results to text file
+                with open("foundFollowers.txt", 'a') as f:
+                    for item in orgResults[-1]:
+                        f.write(str(item)+", \n")
+                print "Page "+str(iterator)+" results written sucessfully to foundFollowers.txt."
+                iterator +=1
+                nextCursor = orgResults[0]
+        print "-------------"
+        print "Done!"
+        print "All results written to foundFollowers.txt"
+        print "-------------"
+
+
+    def fetchHashtagUsers(self):
+        """
+        Search for all users who've used one or more of a list of hashtags
+        A single hashtag can be specified at the command line, or a text file
+        can be used with one tag per line.
+
+        Note: Generally the last 5-10 days of status data is available from Twitter
+
+        List is output to file by number of followers (most-least)
+        Dictionary of users with tags and number of followers is returned
+        (key: screenname)
+        """
+        thisAPIInst = self.create
+        if self.args.ht:
+            hashList
+            hashList = self.args.ht
+        else:
+            hashList = ['lonelyHashtag']
+
+        #Dictionary to store all SNs found (key-Screenname:value-[[hashtags], number of followers])
+        hashDict = {}
+
+        #iterate over all hashtags of interest
+        for hashEntry in hashList:
+            print "searching for #"+hashEntry
+            thisQuery = "q=%23"+ hashEntry + "&count=100"
+            #get data
+            hashResults = thisAPIInst.GetSearch(raw_query=thisQuery)
+            #iterate over every status returned, grab the screennames,
+            #and add to hashDict
+            for status in hashResults:
+                #an object parsing CF, as elements of the status obj
+                #aren't addressable (sigh)
+                statusString = str(status)
+                splitStatus = statusString.split(',')
+                snList = fnmatch.filter(splitStatus, ' "screen_name*')
+                snPosterList = snList[0].split('"')
+                snPoster = snPosterList[-2]
+
+                #finally add the damn thing to the hashDict
+                if snPoster in hashDict:
+                    if hashEntry in hashDict[snPoster][0]:
+                        pass
+                    else:
+                        hashDict[snPoster][0].append(hashEntry)
+                else:
+                    hashDict[snPoster] = [[hashEntry]]
+
+        #gather the number of followers of each person found
+        for name in hashDict.keys():
+            thisUser = thisAPIInst.GetUser(screen_name=name)
+            hashDict[name].append(thisUser.followers_count)
+
+        #save formatted and sorted results to a text file
+        dictlist = []
+
+        #saves a list of users (order: most-least followers)
+        #includes which hashtag(s) they used and how many followers they have
+        #example: user,['tag1', 'tag2'],564
+        with open("hashtagUsers.txt", 'a') as f:
+            for key, value in hashDict.iteritems():
+                dictlist.append([key,value])
+            dictlist.sort(key=lambda sublist:sublist[1][1], reverse=True)
+            for item in dictlist:
+                f.write(str(item[0])+","+str(item[1][0])+","+str(item[1][1])+", \n")
+        print "-------------"
+        print "All results for hashtag search written to hashtagUsers.txt"
+        print "-------------"
+        return hashDict
