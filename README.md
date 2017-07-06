@@ -1,11 +1,6 @@
 
 # bots for a better world
 
-[![Documentation Status](https://readthedocs.org/projects/botsforabetterworld/badge/?version=latest)](http://botsforabetterworld.readthedocs.io/en/latest/?badge=latest)
-[![License](https://img.shields.io/badge/license-GPL-blue.svg)](https://en.wikipedia.org/wiki/GNU_General_Public_License)
-<!---
-[![Join the chat at https://gitter.im/elantrian/botsFaBW](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/dwyl/?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
---->
 * View [Documentation](https://botsforabetterworld.readthedocs.io/en/latest/)
 
 * <b>For help with your project</b>
